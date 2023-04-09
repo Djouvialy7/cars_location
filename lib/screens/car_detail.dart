@@ -1,4 +1,4 @@
-
+import 'package:cars_location/screens/boking.dart';
 import 'package:cars_location/utils/utils.dart';
 import 'package:flutter/material.dart';
 import '../widgets/specific_card.dart';
@@ -73,27 +73,28 @@ class CarDetail extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               SpecificsCard(
-                name: 'Color',
+                name: 'Couleur',
                 name2: color,
                 price: 500,
               ),
               SpecificsCard(
-                name: 'Gearbox',
+                name: 'Boîte de vitesses',
                 name2: gearbox,
                 price: 650,
               ),
               SpecificsCard(
-                name: 'Fuel',
+                name: 'Carburant',
                 name2: fuel,
                 price: 750,
-                
               )
             ],
           ),
           SizedBox(height: 10),
           ElevatedButton(
-
-            onPressed: (){},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => CalendarPage()));
+            },
             child: Text(
               'Reservez Maintenant',
               style: TextStyle(fontSize: 20, color: Colors.white),

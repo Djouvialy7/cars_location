@@ -1,5 +1,5 @@
-
 import 'package:cars_location/Views/splashScreen.dart';
+import 'package:cars_location/screens/boking.dart';
 import 'package:cars_location/screens/cars_overview.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +15,7 @@ class home extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: ('Cars Location'),
-      home:SplashScreen (),
+      home: SplashScreen(),
     );
   }
 }
