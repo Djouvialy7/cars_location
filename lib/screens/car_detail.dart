@@ -34,73 +34,75 @@ class CarDetail extends StatelessWidget {
           IconButton(onPressed: null, icon: Icon(Icons.share, size: 30)),
         ],
       ),
-      body: Column(
-        children: [
-          Text(title, style: MainHeading),
-          Text(
-            brand,
-            style: BasicHeading,
-          ),
-          Hero(tag: title, child: Image.asset(path)),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              SpecificsCard(
-                name: '12 Mois',
-                price: price * 12,
-                name2: 'Francs Cfa',
-              ),
-              SpecificsCard(
-                name: '6 Mois',
-                price: price * 6,
-                name2: 'Francs Cfa',
-              ),
-              SpecificsCard(
-                name: '1 mois',
-                price: price * 1,
-                name2: 'Francs Cfa',
-              )
-            ],
-          ),
-          SizedBox(height: 20),
-          Text(
-            'SPECIFICATIONS',
-            style: TextStyle(
-                color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 20),
-          ),
-          SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              SpecificsCard(
-                name: 'Couleur',
-                name2: color,
-                price: 500,
-              ),
-              SpecificsCard(
-                name: 'Boîte de vitesses',
-                name2: gearbox,
-                price: 650,
-              ),
-              SpecificsCard(
-                name: 'Carburant',
-                name2: fuel,
-                price: 750,
-              )
-            ],
-          ),
-          SizedBox(height: 10),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => CalendarPage()));
-            },
-            child: Text(
-              'Reservez Maintenant',
-              style: TextStyle(fontSize: 20, color: Colors.white),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Text(title, style: MainHeading),
+            Text(
+              brand,
+              style: BasicHeading,
             ),
-          )
-        ],
+            Hero(tag: title, child: Image.asset(path)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                SpecificsCard(
+                  name: '12 Mois',
+                  price: price * 12,
+                  name2: 'Francs Cfa',
+                ),
+                SpecificsCard(
+                  name: '6 Mois',
+                  price: price * 6,
+                  name2: 'Francs Cfa',
+                ),
+                SpecificsCard(
+                  name: '1 mois',
+                  price: price * 1,
+                  name2: 'Francs Cfa',
+                )
+              ],
+            ),
+            SizedBox(height: 20),
+            Text(
+              'SPECIFICATIONS',
+              style: TextStyle(
+                  color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 20),
+            ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                SpecificsCard(
+                  name: 'Couleur',
+                  name2: color,
+                  price: 500,
+                ),
+                SpecificsCard(
+                  name: 'Boîte de vitesses',
+                  name2: gearbox,
+                  price: 650,
+                ),
+                SpecificsCard(
+                  name: 'Carburant',
+                  name2: fuel,
+                  price: 750,
+                )
+              ],
+            ),
+            SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CalendarPage()));
+              },
+              child: Text(
+                'Reservez Maintenant',
+                style: TextStyle(fontSize: 20, color: Colors.white),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
