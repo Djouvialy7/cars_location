@@ -1,5 +1,6 @@
 import 'package:cars_location/Views/cars_overview.dart';
 import 'package:cars_location/Views/inscription.dart';
+import 'package:cars_location/screens/cars_overview.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -18,7 +19,7 @@ class _LoginPageState extends State<LoginPage> {
       appBar: AppBar(
         title: Text('Connexion'),
         centerTitle: true,
-        backgroundColor:Colors.lightBlue,
+        backgroundColor: Colors.lightBlue,
       ),
       body: Form(
         key: _formKey,
@@ -30,7 +31,6 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               TextFormField(
                 controller: _phoneController,
-
                 decoration: InputDecoration(
                   suffix: Icon(Icons.phonelink_ring_rounded),
                   labelText: 'Numéro de téléphone',
@@ -40,7 +40,6 @@ class _LoginPageState extends State<LoginPage> {
                   if (value!.isEmpty) {
                     return 'Veuillez saisir votre numéro de téléphone';
                   }
-
                 },
               ),
               SizedBox(height: 16.0),
@@ -67,16 +66,15 @@ class _LoginPageState extends State<LoginPage> {
                   }
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => CarsOverviewScreen()));
-
+                      MaterialPageRoute(
+                          builder: (context) =>CarsOverview()));
                 },
                 child: Text('Connexion'),
               ),
               SizedBox(height: 16.0),
               GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                      context,
+                  Navigator.push(context,
                       MaterialPageRoute(builder: (context) => RegisterPage()));
                 },
                 child: Text(
